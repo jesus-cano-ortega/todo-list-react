@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Item from "./item.jsx";
 
 const Home = () => {
 	//Hooks
@@ -25,14 +26,7 @@ const Home = () => {
 
 	//Function of the task structure
 	const taskList = items.map((item, index) => {
-		return (
-			<>
-				<div key={index}>
-					<li className="text-white">{item.name}</li>
-					<button onClick={deleteTask}>Delete Task</button>
-				</div>
-			</>
-		);
+		<Item name={item.name} key={index} click={deleteTask} />;
 	});
 
 	//Function that shows the number of tasks
