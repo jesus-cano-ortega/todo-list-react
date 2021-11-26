@@ -24,11 +24,6 @@ const Home = () => {
 		setCounter(counter - 1);
 	};
 
-	//Function of the task structure
-	const taskList = items.map((item, index) => {
-		<Item name={item.name} key={index} click={deleteTask} />;
-	});
-
 	//Function that shows the number of tasks
 	const pendingTask = () => {
 		if (counter == 0) return "No task";
@@ -55,7 +50,17 @@ const Home = () => {
 						}}
 						value={value}
 					/>
-					<ul>{taskList}</ul>
+					<ul>
+						{items.map((item, index) => {
+							return (
+								<Item
+									name={item.name}
+									key={index}
+									click={deleteTask}
+								/>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
 		</>
