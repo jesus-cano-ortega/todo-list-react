@@ -16,7 +16,7 @@ const Home = () => {
 		}
 	};
 
-	//Function that deletes an element inside the array when press button
+	//Function that deletes an element inside the array when press the item close button
 	const deleteTask = index => {
 		let newArray = [...items];
 		newArray.splice(index, 1);
@@ -24,7 +24,7 @@ const Home = () => {
 		setCounter(counter - 1);
 	};
 
-	//Function that shows the number of tasks
+	//Function that shows the number of pending tasks
 	const pendingTask = () => {
 		if (counter == 0) return "No pending tasks";
 		else return `You have ${counter} pending tasks`;
